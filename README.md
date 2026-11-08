@@ -211,4 +211,4 @@ docker network rm red-pablo
 
 ## 8. Audio explicativo
 
-🎧 [Audio de 60 segundos con lo aprendido](audio/) *(pendiente de subir)*
+🎧 [Escuchar el audio con lo aprendido (MP3, 1 min 10 s)](audio/audio-semana3-pablo.mp3)
