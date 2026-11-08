@@ -1,0 +1,35 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-pablo
+    environment:
+      MYSQL_ROOT_PASSWORD: root1234
+      MYSQL_USER: pablo
+      MYSQL_PASSWORD: pablo1234
+      MYSQL_DATABASE: practica
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-datos:/var/lib/mysql
+    networks:
+      - red-pablo
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin-pablo
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+    networks:
+      - red-pablo
+
+networks:
+  red-pablo:
+    driver: bridge
+
+volumes:
+  mysql-datos:
